@@ -6,6 +6,10 @@ const TodoForm = () => {
   const dispatch = useDispatch();
   const addHandler = (e) => {
     e.preventDefault();
+
+    if (input.length === 0) {
+      return;
+    }
     dispatch(addTodo(input));
 
     setInput("");
